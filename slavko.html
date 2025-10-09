@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+</head>
+<body>
+    <div id="b1">
+        <img src="pszczola.png" alt="pszczoła na fioletowym kwiatku" style="width: 500px;" id="pszczola"><br>
+        <input type="radio" id="blur" name="szczola1"><label>Blur</label><br>
+        <input type="radio" id="sepia" name="szczola1"><label>Sepia</label><br>
+        <input type="radio" id="negatyw" name="szczola1"><label>Negatyw</label><br>
+        <button id="btn1">Zastosuj</button>
+    </div>
+
+    <script>
+        const btn1 = document.querySelector("#btn1")
+        btn1.addEventListener('click', function(){
+            let pszczola = document.querySelector('#pszczola')
+            let blur = document.querySelector('#blur')
+            let sepia = document.querySelector('#sepia')
+            let negatyw = document.querySelector('#negatyw')
+
+            if(blur.checked === true){
+                pszczola.style.filter = "blur(10px)"
+                console.log("nie pwoiem")
+            }
+        })
+    </script>
+</body>
+</html>

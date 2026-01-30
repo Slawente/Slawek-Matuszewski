@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: Arial, sans-serif;
+}
+
+.layout {
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 16px;
+
+  /* ramka animowana */
+  border: 3px solid transparent;
+  background:
+    linear-gradient(180deg, #f1f6f9, #e9eff3) padding-box,
+    linear-gradient(135deg, #6a5af9, #00c6ff, #ff4d4d, #6a5af9) border-box;
+
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+header,
+footer {
+  padding: 20px;
+  background: rgba(0,0,0,0.03);
+  font-weight: bold;
+  color: #333;
+}
+
+main {
+  padding: 30px;
+  min-height: 300px;
+  color: #333;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+input[type="file"],
+input[type="number"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input[type="number"]:focus,
+input[type="file"]:focus {
+  border-color: #6a5af9;
+  box-shadow: 0 0 0 3px rgba(106, 90, 249, 0.2);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+input[type="submit"] {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6a5af9, #00c6ff);
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    width: 95%;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+.file-wrapper {
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+}
+
+.file-wrapper input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.file-wrapper span {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a5af9, #00c6ff);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-wrapper span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
